@@ -1,0 +1,371 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* style untuk header */
+header {
+  background-color: #dd0000d5;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+/* style untuk judul halaman */
+h1 {
+  margin-top: 0;
+}
+
+/* style untuk konten utama */
+main {
+  margin-left: 150px;
+  background-color: #ffffff;
+}
+
+/* style untuk sidebar */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  background-color: #000000;
+  padding: 20px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-form input[type="text"] {
+  width: 70px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.search-form input[type="submit"] {
+  padding: 10px 10px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.sidebar img {
+  width: 100px;
+  /* Sesuaikan lebar sesuai kebutuhan */
+  height: auto;
+  /* Sesuaikan tinggi sesuai kebutuhan */
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown {
+  width: 130px;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown-menu {
+  background-color: #0060f1;
+  width: 130px;
+  padding: 10px 20px;
+  left: 130px;
+  top: 0;
+  border-radius: 10px;
+  box-shadow: 2px 3px 10px rgb(84, 84, 84);
+  display: none;
+}
+
+.dropdown-menu p {
+  margin: 5px 0px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.dropdown-menu p:hover {
+  background-color: #fff;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+/* add styles for nested dropdowns */
+.dropdown-menu .dropdown {
+  width: auto;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.dropdown-menu .dropdown:hover > .dropdown-menu {
+  display: block;
+  top: 0;
+  border-radius: 5px;
+}
+
+.dropdown-menu .dropdown-menu {
+  top: 0;
+  left: 130px;
+  border-radius: 5px;
+  display: none;
+}
+
+.dropdown-menu .dropdown-menu p {
+  margin: 0;
+  padding: 5px 10px;
+}
+
+.dropdown-menu .dropdown-menu p:hover {
+  background-color: #fff;
+  color: #b50606;
+}
+
+.dropdown-menu .dropdown-menu .dropdown:hover > .dropdown-menu {
+  display: block;
+  top: 0;
+  left: 130px;
+  border-radius: 5px;
+}
+
+.slide {
+  position: relative;
+  margin: 0 auto;
+  width: 450px;
+  height: 490px;
+  overflow: hidden;
+}
+
+.slide input {
+  display: block;
+  position: absolute;
+  width: 960px;
+  height: 450px;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.slide img {
+  visibility: hidden;
+  opacity: 0;
+  height: 450px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400px;
+  border: 20px solid #ddd;
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+
+.slide input:checked + img {
+  visibility: visible;
+  opacity: 1;
+}
+
+.slide input:checked {
+  display: none;
+}
+
+.slide input:nth-child(1) {
+  z-index: 13;
+}
+.slide input:nth-child(3) {
+  z-index: 12;
+}
+.slide input:nth-child(5) {
+  z-index: 11;
+}
+.slide input:nth-child(7) {
+  z-index: 10;
+}
+
+.slide input:nth-child(1):checked ~ input:nth-child(3),
+.slide input:nth-child(3):checked ~ input:nth-child(5),
+.slide input:nth-child(5):checked ~ input:nth-child(7) {
+  z-index: 15;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: 180px;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin-right: 50px;
+  vertical-align: bottom;
+}
+
+a {
+  position: center;
+}
+
+.kalimat {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.gambar {
+  display: none;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+a:hover .gambar {
+  display: inline-block;
+}
+
+a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.container {
+  margin: auto;
+}
+
+.contact-info {
+  margin-left: 10px;
+}
+
+.contact-info h3,
+.contact-info p {
+  margin: 0;
+}
+
+.contact-info p {
+  margin-top: 5px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.kontak {
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.kontak-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.kontak-info {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.kontak-info button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.kontak-info button img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.kontak-info button:hover {
+  background-color: #45a049;
+}
+
+.map-container {
+  flex: 1;
+  margin-top: 10px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 430px;
+  border: 0;
+}
+
+@media (min-width: 768px) {
+  .kontak {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .kontak-container {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .map-container {
+    width: 400px;
+  }
+}
+
+footer {
+  background-color: #ababab;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media only screen and (min-width: 1200px) {
+  .article {
+    /** use display flex LOL **/
+    display: flex;
+  }
+}

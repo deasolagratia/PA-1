@@ -1,0 +1,31 @@
+Pembuatan Database 
+
+CREATE DATABASE komentar_db;
+
+tabel komentar:
+CREATE TABLE komentar (
+  id INT(11) AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50),
+  comment TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+"id" primary key dengan tipe data INT dan otomatis bertambah nilainya (AUTO_INCREMENT).
+"name" kolom untuk menyimpan nama pengguna dengan tipe data VARCHAR(50), yang dapat menampung maksimal 50 karakter.
+"comment" kolom untuk menyimpan isi komentar dengan tipe data TEXT, yang dapat menampung teks panjang.
+"created_at" kolom untuk menyimpan waktu pembuatan komentar dengan tipe data TIMESTAMP, dengan nilai default CURRENT_TIMESTAMP yang akan otomatis diisi dengan waktu saat ini saat komentar dibuat.
+
+tabel balasan:
+CREATE TABLE balasan (
+  id INT(11) AUTO_INCREMENT PRIMARY KEY,
+  komentar_id INT(11),
+  name VARCHAR(50),
+  reply TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+"id" primary key dengan tipe data INT dan otomatis bertambah nilainya (AUTO_INCREMENT).
+"komentar_id" kolom untuk menyimpan ID komentar yang dijawab dengan tipe data INT(11).
+"name" kolom untuk menyimpan nama pengguna yang menjawab dengan tipe data VARCHAR(50), yang dapat menampung maksimal 50 karakter.
+"reply" kolom untuk menyimpan isi balasan dengan tipe data TEXT, yang dapat menampung teks panjang.
+"created_at" kolom untuk menyimpan waktu pembuatan balasan dengan tipe data TIMESTAMP, dengan nilai default CURRENT_TIMESTAMP yang akan otomatis diisi dengan waktu saat ini saat balasan dibuat.
